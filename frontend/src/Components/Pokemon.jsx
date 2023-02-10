@@ -1,13 +1,13 @@
-export default function Pokemon() {
+export default function Pokemon({image, name}) {
   return (
     <div className="flex-row w-52 bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700 m-5">
       <a className="flex flex-col justify-center items-center" href="#">
-        <img className="w-2/3" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"/>
+        <img className="w-2/3" src={image}/>
       </a>
       <div className="flex flex-col justify-center items-center p-3">
         <a href="#">
           <h5 className="flex flex-col justify-center items-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-800">
-            Charmeleon
+            {name}
           </h5>
         </a>
         <a
