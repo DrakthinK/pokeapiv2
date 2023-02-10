@@ -1,6 +1,6 @@
 export default function Search() {
     return (
-        <form className="max-w-sm px-4">
+        <form className="max-w-xl px-4 w-96 mb-4">
             <div className="relative">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

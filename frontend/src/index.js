@@ -10,11 +10,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <App />
-    <Search />
-    <Pokemon />
-    <Pokemon />
-    <Pokemon />
-    <Pokedex />
+    <div className='containerSearch'>
+      <Search />
+    </div>
+    <div className='containerPokemon'>
+      <Pokemon /><Pokemon /><Pokemon /><Pokemon />
+      <Pokedex />
+    </div>
   </>
 );
 
