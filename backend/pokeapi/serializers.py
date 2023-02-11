@@ -4,7 +4,7 @@ from .models import  Pokemon, Pokedex
 class PokemonSerializers(serializers.ModelSerializer):
     class Meta:
         model= Pokemon
-        fields=('name','abilities','base_experience','weight','stats','front_default')
+        fields=('id','name','abilities','base_experience','weight','stats','front_default')
 
 
 class PokedexSerializers(serializers.ModelSerializer):
