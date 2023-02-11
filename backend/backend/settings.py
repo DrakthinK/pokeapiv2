@@ -91,11 +91,11 @@ DATABASES = {
         'NAME': 'testapipokemon2',
         'USER': 'root',
         # DO NOT PUSH TO REPOSITORY
-        'PASSWORD': 'root2021',
+        'PASSWORD': '123456',
         # DO NOT PUSH TO REPOSITORY
         'HOST': 'localhost',
         # DO NOT PUSH TO REPOSITORY
-        'PORT': '3306'
+        'PORT': '3300'
     }
 }
 

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Logo from '../Components/Logo'
-import Card from '../Components/Card'
-import Search from '../Components/Search'
-
-export default function PokemonPage() {
+import Logo from "../Components/Logo";
+import Card from "../Components/Card";
+import Search from "../Components/Search";
+import { Link } from "react-router-dom";
+export default function PokemonPage(id) {
   const [pokemons, setPokemons] = useState([]);
-
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/v2/pokemon/")
@@ -17,7 +16,6 @@ export default function PokemonPage() {
         alert("Algo fue mal");
       });
   }, []);
-  console.log(pokemons);
 
   return (
     <>
@@ -26,8 +24,8 @@ export default function PokemonPage() {
         <Search />
       </div>
       <div className="containerPokemon">
-        {pokemons.map((item, i) => (
-          <Card name={item.name} image={item.front_default} key={i} />
+        {pokemons.map(item => (
+          <Card name={item.name} image={item.front_default} key={item.id} />
         ))}
       </div>
     </>
