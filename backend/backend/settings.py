@@ -50,11 +50,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
     
 ]
 
 ROOT_URLCONF = 'backend.urls'
+#CORS_ALLOWED_ORIGINS = [
+#    "http://127.0.0.1:3000",
+#]
+#CORS_ALLOW_ALL_ORIGINS=True
 
 TEMPLATES = [
     {
@@ -87,11 +91,11 @@ DATABASES = {
         'NAME': 'testapipokemon2',
         'USER': 'root',
         # DO NOT PUSH TO REPOSITORY
-        'PASSWORD': '123456',
+        'PASSWORD': 'root2021',
         # DO NOT PUSH TO REPOSITORY
         'HOST': 'localhost',
         # DO NOT PUSH TO REPOSITORY
-        'PORT': '3300'
+        'PORT': '3306'
     }
 }
 
@@ -136,3 +140,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
