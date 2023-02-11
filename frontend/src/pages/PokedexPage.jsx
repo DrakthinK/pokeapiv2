@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from '../Components/Header'
-import Pokedex from '../Components/Pokedex'
+import Logo from '../Components/Logo'
+import Card from '../Components/Card'
 import Search from '../Components/Search'
 
 export default function PokedexPage() {
@@ -21,13 +21,13 @@ export default function PokedexPage() {
 
   return (
     <>
-      <Header />
+      <Logo />
       <div className="containerSearch">
         <Search />
       </div>
       <div className="containerPokemon">
         {pokedexs.map((item, i) => (
-          <Pokedex name={item.name} key={i} />
+          <Card name={item.name} key={i} />
         ))}
       </div>
     </>

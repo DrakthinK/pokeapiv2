@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from '../Components/Header'
-import Pokemon from '../Components/Pokemon'
+import Logo from '../Components/Logo'
+import Card from '../Components/Card'
 import Search from '../Components/Search'
 
 export default function PokemonPage() {
@@ -9,7 +9,7 @@ export default function PokemonPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/")
+      .get("http://localhost:8000/api/v2/pokemon/")
       .then((response) => {
         setPokemons(response.data);
       })
@@ -21,13 +21,13 @@ export default function PokemonPage() {
 
   return (
     <>
-      <Header />
+      <Logo />
       <div className="containerSearch">
         <Search />
       </div>
       <div className="containerPokemon">
         {pokemons.map((item, i) => (
-          <Pokemon name={item.name} image={item.front_default} key={i} />
+          <Card name={item.name} image={item.front_default} key={i} />
         ))}
       </div>
     </>

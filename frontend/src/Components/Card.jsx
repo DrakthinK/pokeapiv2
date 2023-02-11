@@ -1,12 +1,10 @@
-export default function Pokedex({name}) {
+import { Link } from "react-router-dom";
+export default function Card({ image="https://i.pinimg.com/originals/ef/ff/65/efff65ee37b35ea3b4df426ad32b1097.png", name, path }) {
   return (
-    <>
+    <Link to={path}>
       <div className="flex-row w-52 bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-700 m-5">
         <a className="flex flex-col justify-center items-center" href="#">
-          <img
-            className="w-2/3"
-            src="https://i.pinimg.com/originals/ef/ff/65/efff65ee37b35ea3b4df426ad32b1097.png"
-          />
+          <img className="w-2/3" src={image} />
         </a>
         <div className="flex flex-col justify-center items-center p-3">
           <a href="#">
@@ -22,6 +20,5 @@ export default function Pokedex({name}) {
           </a>
         </div>
       </div>
-    </>
-  );
-}
+    </Link>
+  );}
