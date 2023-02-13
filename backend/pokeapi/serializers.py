@@ -10,4 +10,4 @@ class PokemonSerializers(serializers.ModelSerializer):
 class PokedexSerializers(serializers.ModelSerializer):
     class Meta:
         model= Pokedex
-        fields=('name', 'descriptions', 'region', 'pokemon_entries')
+        fields=('id','name', 'descriptions', 'region', 'pokemon_entries')

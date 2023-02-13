@@ -27,7 +27,7 @@ export default function PokedexPage() {
       </div>
       <div className="containerPokemon">
         {pokedexs.map((item, i) => (
-          <Card name={item.name} key={i} />
+          <Card name={item.name} key={i} id={item.id}/>
         ))}
       </div>
     </>

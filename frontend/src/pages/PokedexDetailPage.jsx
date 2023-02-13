@@ -4,6 +4,7 @@ import axios from "axios";
 import DetailCardPokedex from "../Components/DetailCardPokedex";
 import Logo from "../Components/Logo";
 import Card from "../Components/Card";
+
 const PokedexDetailPage = () => {
   const params = useParams();
   const [pokedex, setPokedex] = useState([]);
@@ -18,15 +19,17 @@ const PokedexDetailPage = () => {
         alert("Algo fue mal");
       });
   }, []);
-
   return (
     <>
       <Logo />
-      <DetailCardPokedex
-        image={pokedex.front_default}
-        name={pokedex.name}
-      />
-      <Card />
+      <DetailCardPokedex image={pokedex.front_default} name={pokedex.name} />
+      <div className="containerPokemon">
+        {pokedex.pokemon_entries &&
+          pokedex.pokemon_entries.length > 0 &&
+          pokedex.pokemon_entries.map(item => (
+            <Card name={item.pokemon_species.name} key={item.entry_number}/>
+          ))}
+      </div>
     </>
   );
 };

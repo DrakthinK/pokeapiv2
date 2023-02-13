@@ -3,9 +3,11 @@ import axios from "axios";
 import Logo from "../Components/Logo";
 import Card from "../Components/Card";
 import Search from "../Components/Search";
-import { Link } from "react-router-dom";
-export default function PokemonPage(id) {
+
+export default function PokemonPage() {
   const [pokemons, setPokemons] = useState([]);
+  const [value, setValue] = useState("");
+
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/v2/pokemon/")
@@ -17,15 +19,23 @@ export default function PokemonPage(id) {
       });
   }, []);
 
+  const filterResults = (pokemons, value) => {
+    return pokemons.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(value.toLowerCase())
+    );
+  };
+
+  const filteredPokemons = filterResults(pokemons, value);
+
   return (
     <>
       <Logo />
       <div className="containerSearch">
-        <Search />
+        <Search filterResults={filterResults} value={value} setValue={setValue} />
       </div>
       <div className="containerPokemon">
-        {pokemons.map(item => (
-          <Card name={item.name} image={item.front_default} key={item.id} />
+        {filteredPokemons.map((item, i) => (
+          <Card name={item.name} image={item.front_default} id={item.id} key={i} />
         ))}
       </div>
     </>
